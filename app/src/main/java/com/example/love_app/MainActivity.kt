@@ -27,7 +27,15 @@ open class MainActivity : AppCompatActivity() {
         binding.btnChangeImageFemale.setOnClickListener {
             selectImageAvatar(2)
         }
+        onCLickMoments()
 
+    }
+
+    private fun onCLickMoments() {
+        binding.imbGallery.setOnClickListener {
+          val intent = Intent(this,Add_Moments::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun selectImageAvatar(avatarid:Int) {
