@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -50,5 +53,8 @@ dependencies {
 
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    //ImagePicker
+    implementation ("com.github.dhaval2404:imagepicker:2.1")
+/*    implementation ("com.github.dhaval2404:imagepicker-support:1.7.1")*/
 
 }

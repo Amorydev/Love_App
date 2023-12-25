@@ -59,7 +59,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="393dp"
+        android:layout_height="400dp"
         android:gravity="center">
 
         <ImageView
@@ -101,6 +101,7 @@
             android:scaleY="-1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:mwhCloseColor="@color/endAnamistar"
             app:mwhGradientAngle="360"
@@ -120,6 +121,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageButton
+            android:id="@+id/btn_change_image_male"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_photo_camera"
+            android:alpha="0.8"
+            app:layout_constraintBottom_toTopOf="@+id/txt_name_male"
+            app:layout_constraintEnd_toEndOf="@+id/avtmale"
+            app:layout_constraintHorizontal_bias="0.892"
+            app:layout_constraintStart_toStartOf="@+id/waveHeader" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avtfemale"
             android:layout_width="140dp"
@@ -133,7 +145,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageButton
+            android:id="@+id/btn_change_image_female"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="4dp"
+            android:alpha="0.8"
+            android:background="@drawable/ic_photo_camera"
+            app:layout_constraintBottom_toTopOf="@+id/txt_name_female"
+            app:layout_constraintEnd_toEndOf="@+id/avtfemale"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="@+id/waveHeader" />
+
         <TextView
+            android:id="@+id/txt_name_male"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -143,11 +168,12 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/avtmale"
-            app:layout_constraintHorizontal_bias="1.0"
+
             app:layout_constraintStart_toStartOf="@+id/avtmale"
             app:layout_constraintTop_toBottomOf="@+id/avtmale" />
 
         <TextView
+            android:id="@+id/txt_name_female"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -160,6 +186,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/avtfemale"
             app:layout_constraintTop_toBottomOf="@+id/avtfemale" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
