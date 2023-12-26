@@ -99,7 +99,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -110,14 +110,19 @@
             app:layout_constraintStart_toEndOf="@+id/textView5"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/txtDate"
+            android:gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
             android:ems="10"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:hint="26/03/2003"
             android:inputType="date"
-            app:layout_constraintEnd_toEndOf="@+id/editTextText2"
-            app:layout_constraintStart_toStartOf="@+id/editTextText2"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+            app:layout_constraintStart_toStartOf="@+id/txtTitle"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

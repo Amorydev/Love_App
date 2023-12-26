@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.love_app.databinding.ActivityMainBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.material.tabs.TabLayoutMediator
 import com.scwang.wave.MultiWaveHeader
 
 private lateinit var binding: ActivityMainBinding
@@ -28,7 +29,15 @@ open class MainActivity : AppCompatActivity() {
             selectImageAvatar(2)
         }
         onCLickMoments()
+        onClickTabView()
+    }
 
+    private fun onClickTabView() {
+        val adapter = ViewAdapter(supportFragmentManager,lifecycle)
+        binding.vplayout.adapter = adapter
+        TabLayoutMediator(binding.pageIndicator, binding.vplayout){
+                tab,position ->
+        }.attach()
     }
 
     private fun onCLickMoments() {

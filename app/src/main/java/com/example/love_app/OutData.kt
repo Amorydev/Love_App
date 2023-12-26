@@ -1,6 +1,10 @@
 package com.example.love_app
 
+import java.util.Date
+
 class OutData(
-    listrequest:String
+    val images: Int,
+    val title: String,
+    val date: String
 ) {
 }

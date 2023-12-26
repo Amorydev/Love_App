@@ -56,38 +56,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vplayout"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:gravity="center">
-
-        <ImageView
-            android:id="@+id/txt_heart"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:alpha="0.9"
-            android:background="@drawable/icon_heart_bc"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            android:fontFamily="@font/kitto"
-            android:text="1"
-            android:textColor="@color/black"
-            android:textSize="80dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_heart"
-            app:layout_constraintEnd_toEndOf="@+id/txt_heart"
-            app:layout_constraintStart_toStartOf="@+id/txt_heart"
-            app:layout_constraintTop_toTopOf="@+id/txt_heart" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="450dp">
+    </androidx.viewpager2.widget.ViewPager2>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/pageIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        android:background="@drawable/ic_trongsuot"
+        android:layout_gravity="center"
+        app:tabBackground="@drawable/onboarding_viewpager_selector_blue"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
