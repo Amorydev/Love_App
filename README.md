@@ -1,4 +1,4 @@
-# Hello, I'm Amorydev 
+# Nhìn cái chó gì
 ```
 Bao năm cha mẹ hao gầy
 
