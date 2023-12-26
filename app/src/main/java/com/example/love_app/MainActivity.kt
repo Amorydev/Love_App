@@ -13,7 +13,7 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 import com.scwang.wave.MultiWaveHeader
 
 private lateinit var binding: ActivityMainBinding
-
+private lateinit var intent: Intent
 
 open class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,48 +33,51 @@ open class MainActivity : AppCompatActivity() {
 
     private fun onCLickMoments() {
         binding.imbGallery.setOnClickListener {
-          val intent = Intent(this,Add_Moments::class.java)
+            intent = Intent(this, Add_Moments::class.java)
             startActivity(intent)
         }
     }
 
-    private fun selectImageAvatar(avatarid:Int) {
+    private fun selectImageAvatar(avatarid: Int) {
         ImagePicker.with(this)
             //cắt ảnh
             .crop()
             //kích thước hình ảnh cuối cùng
             .compress(1024)
             //độ phân giải của ảnh
-            .maxResultSize(1080,1080)
+            .maxResultSize(1080, 1080)
             .start(avatarid)
     }
+
     private var uriAvatarMale: Uri? = null
     private var uriAvatarFeMale: Uri? = null
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         //kiểm tra xem kết quả trả về thành công hay không
-        if(resultCode == Activity.RESULT_OK){
+        if (resultCode == Activity.RESULT_OK) {
             // khởi tạo đối tượng uri từ Intent dẫn đến hình ảnh
-            when(requestCode){
+            when (requestCode) {
                 1 -> {
                     uriAvatarMale = data?.data!!
                 }
-                2->{
-                    uriAvatarFeMale= data?.data!!
+
+                2 -> {
+                    uriAvatarFeMale = data?.data!!
                 }
             }
 
-        }else if (resultCode == ImagePicker.RESULT_ERROR){
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
             //Nêú thư viện picker có lỗi xảy ra thì thông báo lỗi
-            Toast.makeText(this,ImagePicker.getError(data),Toast.LENGTH_SHORT).show()
-        }else{
-            Toast.makeText(this,"Không thể thực hiện",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Không thể thực hiện", Toast.LENGTH_SHORT).show()
         }
-        when(requestCode){
+        when (requestCode) {
             1 -> {
                 binding.avtmale.setImageURI(uriAvatarMale)
             }
-            2 ->{
+
+            2 -> {
                 binding.avtfemale.setImageURI(uriAvatarFeMale)
             }
         }
@@ -83,7 +86,7 @@ open class MainActivity : AppCompatActivity() {
 
     private fun startWaveWay(context: Context) {
         val waveHeader = findViewById<MultiWaveHeader>(R.id.waveHeader)
-        waveHeader.startColor = ContextCompat.getColor(context ,R.color.anamistar)
+        waveHeader.startColor = ContextCompat.getColor(context, R.color.anamistar)
         waveHeader.closeColor = ContextCompat.getColor(context, R.color.endAnamistar)
     }
 

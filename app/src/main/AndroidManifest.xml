@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Love_App"
         tools:targetApi="31">
         <activity
+            android:name=".AddPickerMoments"
+            android:exported="false" />
+        <activity
             android:name=".Add_Moments"
             android:exported="false" />
         <activity
