@@ -56,20 +56,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vplayout"
         android:layout_width="match_parent"
-        android:layout_height="450dp">
-    </androidx.viewpager2.widget.ViewPager2>
+        android:layout_height="430dp" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/pageIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:tabGravity="center"
-        app:tabIndicatorHeight="0dp"
-        android:background="@drawable/ic_trongsuot"
         android:layout_gravity="center"
-        app:tabBackground="@drawable/onboarding_viewpager_selector_blue"/>
+        android:background="@drawable/ic_trongsuot"
+        app:tabBackground="@drawable/onboarding_viewpager_selector_blue"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -78,13 +79,15 @@
         <com.scwang.wave.MultiWaveHeader
             android:id="@+id/waveHeader"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="210dp"
             android:alpha="1"
             android:scaleY="-1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             app:mwhCloseColor="@color/endAnamistar"
             app:mwhGradientAngle="360"
             app:mwhStartColor="#9796f0"
@@ -107,8 +110,8 @@
             android:id="@+id/btn_change_image_male"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_photo_camera"
             android:alpha="0.8"
+            android:background="@drawable/ic_photo_camera"
             app:layout_constraintBottom_toTopOf="@+id/txt_name_male"
             app:layout_constraintEnd_toEndOf="@+id/avtmale"
             app:layout_constraintHorizontal_bias="0.892"
