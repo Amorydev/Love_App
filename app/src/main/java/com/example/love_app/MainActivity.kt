@@ -1,24 +1,33 @@
 package com.example.love_app
 
 import android.app.Activity
+import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.example.love_app.databinding.ActivityMainBinding
+import com.example.love_app.databinding.AlertDiaglogSettingBinding
+import com.example.love_app.databinding.FragmentBlankMainBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.tabs.TabLayoutMediator
 import com.scwang.wave.MultiWaveHeader
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.temporal.ChronoUnit
 
 private lateinit var binding: ActivityMainBinding
-
-open class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+    lateinit var dialog:AlertDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -32,6 +41,36 @@ open class MainActivity : AppCompatActivity() {
         }
         onCLickMoments()
         onClickTabView()
+        onClickSettings()
+    }
+    private fun onClickSettings() {
+        binding.imbSetting.setOnClickListener {
+            val build =AlertDialog.Builder(this,R.style.backgroundtrongsuot)
+            val dialogBinding = AlertDiaglogSettingBinding.inflate(LayoutInflater.from(this))
+            build.setView(dialogBinding.root)
+            dialogBinding.btnChangeDate.setOnClickListener{
+                DatePickerDialog(
+                    this,
+                    DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+
+                        val fromDate = LocalDate.of(year, month, dayOfMonth)
+                       val day = ChronoUnit.DAYS.between(fromDate,LocalDate.now()).toString()
+                        val bundle = Bundle()
+                        bundle.putString("name", day)
+
+                        val fragment = BlankFragment_Main()
+                        fragment.arguments = bundle
+                        // Thay thế Fragment hiện tại trong layout của Activity bằng Fragment mới
+                        /*val day = ChronoUnit.DAYS.between(fromDate,LocalDate.now()).toString()
+                        Toast.makeText(this,"$day",Toast.LENGTH_SHORT).show()*/
+                    },2020
+                    ,1
+                    ,1
+                ).show()
+            }
+            dialog = build.create()
+            dialog.show()
+        }
     }
 
 

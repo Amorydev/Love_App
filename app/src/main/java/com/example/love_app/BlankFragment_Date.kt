@@ -25,7 +25,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class BlankFragment_Date : Fragment(R.layout.fragment_blank__date) {
-
     private lateinit var txt_hour:TextView
     private lateinit var txt_minimus:TextView
     private lateinit var txt_sec:TextView

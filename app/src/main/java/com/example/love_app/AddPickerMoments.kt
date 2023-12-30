@@ -17,7 +17,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 private lateinit var binding: ActivityAddPickerMomentsBinding
-private lateinit var binding2: ActivityAddMomentsBinding
 class AddPickerMoments : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
