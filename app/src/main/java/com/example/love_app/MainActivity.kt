@@ -3,18 +3,20 @@ package com.example.love_app
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.icu.util.Calendar
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.love_app.databinding.ActivityMainBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.tabs.TabLayoutMediator
 import com.scwang.wave.MultiWaveHeader
+import java.text.SimpleDateFormat
 
 private lateinit var binding: ActivityMainBinding
-private lateinit var intent: Intent
 
 open class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,7 @@ open class MainActivity : AppCompatActivity() {
         onCLickMoments()
         onClickTabView()
     }
+
 
     private fun onClickTabView() {
         val adapter = ViewAdapter(supportFragmentManager,lifecycle)
@@ -98,6 +101,5 @@ open class MainActivity : AppCompatActivity() {
         waveHeader.startColor = ContextCompat.getColor(context, R.color.anamistar)
         waveHeader.closeColor = ContextCompat.getColor(context, R.color.endAnamistar)
     }
-
 
 }

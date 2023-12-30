@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/kitto"
             android:text="1"
+            android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="80dp"
             app:layout_constraintBottom_toBottomOf="@+id/txt_heart"

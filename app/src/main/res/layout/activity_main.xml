@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,8 +10,13 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_heatder"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/imb_setting"
@@ -60,7 +65,12 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vplayout"
         android:layout_width="match_parent"
-        android:layout_height="430dp" />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/pageIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_heatder" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/pageIndicator"
@@ -68,13 +78,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/ic_trongsuot"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:tabBackground="@drawable/onboarding_viewpager_selector_blue"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.scwang.wave.MultiWaveHeader
             android:id="@+id/waveHeader"
@@ -84,10 +100,7 @@
             android:scaleY="-1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
             app:mwhCloseColor="@color/endAnamistar"
             app:mwhGradientAngle="360"
             app:mwhStartColor="#9796f0"
@@ -95,10 +108,12 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avtmale"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="30dp"
+            android:maxHeight="120dp"
+            android:maxWidth="120dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/img_male"
             app:civ_border_color="#EC18D6"
             app:civ_border_width="2dp"
@@ -119,10 +134,12 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avtfemale"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:maxHeight="120dp"
+            android:maxWidth="120dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/img_female"
             app:civ_border_color="#EC18D6"
             app:civ_border_width="2dp"
@@ -161,18 +178,16 @@
             android:id="@+id/txt_name_female"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:gravity="center"
             android:text="Nick name 1"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/avtfemale"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/avtfemale"
             app:layout_constraintTop_toBottomOf="@+id/avtfemale" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="wrap_content"
     tools:context=".BlankFragment_Date">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/framgelayout"
         android:layout_width="match_parent"
-        android:layout_height="193dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/background_in_heart"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_heat_1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/heart__date"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/img_heat_2"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/heart__date"
             app:layout_constraintEnd_toStartOf="@+id/img_heat_3"
             app:layout_constraintStart_toEndOf="@id/img_heat_1"
@@ -37,9 +41,7 @@
             android:id="@+id/img_heat_3"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginEnd="37dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/heart__date"
             app:layout_constraintEnd_toStartOf="@+id/img_heat_4"
             app:layout_constraintStart_toEndOf="@id/img_heat_2"
@@ -49,8 +51,8 @@
             android:id="@+id/img_heat_4"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:layout_marginStart="44dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/heart__date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/img_heat_3"
@@ -63,6 +65,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/love_light"
             android:text="Năm"
+            android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/img_heat_1"
@@ -76,6 +79,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/love_light"
             android:text="Tháng"
+            android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/img_heat_2"
@@ -90,6 +94,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/love_light"
             android:text="Tuần"
+            android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/img_heat_3"
@@ -103,8 +108,10 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/love_light"
             android:text="Ngày"
+            android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/txt_in_heart_minimus"
             app:layout_constraintEnd_toEndOf="@+id/img_heat_4"
             app:layout_constraintStart_toStartOf="@+id/img_heat_4"
             app:layout_constraintTop_toBottomOf="@+id/img_heat_4" />
@@ -115,6 +122,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/kitto"
             android:text="1"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/img_heat_1"
@@ -128,6 +136,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/kitto"
             android:text="1"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/img_heat_2"
@@ -141,6 +150,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/kitto"
             android:text="1"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/img_heat_3"
@@ -154,6 +164,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/kitto"
             android:text="1"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/img_heat_4"
@@ -194,28 +205,67 @@
             app:layout_constraintEnd_toStartOf="@id/txt_in_heart_minimus" />
 
         <TextView
+            android:id="@+id/txt_hour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="24"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/txt_in_heart_sec"
             app:layout_constraintEnd_toEndOf="@+id/txt_in_heart_sec"
             app:layout_constraintStart_toStartOf="@+id/txt_in_heart_sec"
             app:layout_constraintTop_toTopOf="@+id/txt_in_heart_sec" />
+
         <TextView
+            android:id="@+id/txt_minmus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="24"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/txt_in_heart_minimus"
             app:layout_constraintEnd_toEndOf="@+id/txt_in_heart_minimus"
             app:layout_constraintStart_toStartOf="@+id/txt_in_heart_minimus"
             app:layout_constraintTop_toTopOf="@+id/txt_in_heart_minimus" />
+
         <TextView
+            android:id="@+id/txt_sec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="24"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/txt_in_heart_hour"
             app:layout_constraintEnd_toEndOf="@+id/txt_in_heart_hour"
             app:layout_constraintStart_toStartOf="@+id/txt_in_heart_hour"
             app:layout_constraintTop_toTopOf="@+id/txt_in_heart_hour" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_in_heart"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/framgelayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/love_light"
+            android:gravity="center"
+            android:text="Tôi chỉ muốn yêu một người thật lâu… Rồi sau đó sẽ cùng nắm tay nhau đi hết cuối con đường dài của cuộc sống"
+            android:textColor="@color/black"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
