@@ -28,6 +28,7 @@ class BlankFragment_Date : Fragment(R.layout.fragment_blank__date) {
     private lateinit var txt_hour:TextView
     private lateinit var txt_minimus:TextView
     private lateinit var txt_sec:TextView
+    private lateinit var txt_date_in_heart_year:TextView
     private val handler = Handler(Looper.getMainLooper())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +49,7 @@ class BlankFragment_Date : Fragment(R.layout.fragment_blank__date) {
         txt_hour = view.findViewById(R.id.txt_hour)
         txt_minimus = view.findViewById(R.id.txt_minmus)
         txt_sec = view.findViewById(R.id.txt_sec)
+        txt_date_in_heart_year = view.findViewById(R.id.txt_date_in_heart_year)
         return view
     }
     //lấy thời gian hiên tại

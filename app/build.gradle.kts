@@ -57,4 +57,6 @@ dependencies {
     implementation ("com.github.dhaval2404:imagepicker:2.1")
 /*    implementation ("com.github.dhaval2404:imagepicker-support:1.7.1")*/
 
+    implementation ("androidx.fragment:fragment-ktx:1.5.6")
+
 }

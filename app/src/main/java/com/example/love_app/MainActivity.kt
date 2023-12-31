@@ -15,6 +15,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import com.example.love_app.databinding.ActivityMainBinding
 import com.example.love_app.databinding.AlertDiaglogSettingBinding
 import com.example.love_app.databinding.FragmentBlankMainBinding
@@ -54,15 +57,11 @@ class MainActivity : AppCompatActivity() {
                     DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
 
                         val fromDate = LocalDate.of(year, month, dayOfMonth)
-                       val day = ChronoUnit.DAYS.between(fromDate,LocalDate.now()).toString()
-                        val bundle = Bundle()
-                        bundle.putString("name", day)
-
-                        val fragment = BlankFragment_Main()
-                        fragment.arguments = bundle
-                        // Thay thế Fragment hiện tại trong layout của Activity bằng Fragment mới
-                        /*val day = ChronoUnit.DAYS.between(fromDate,LocalDate.now()).toString()
-                        Toast.makeText(this,"$day",Toast.LENGTH_SHORT).show()*/
+                        var day = ChronoUnit.DAYS.between(fromDate,LocalDate.now()).toString()
+                        val bundle = Bundle().apply {
+                            putString("key", day)
+                        }
+                        val year = ChronoUnit.YEARS.between(fromDate,LocalDate.now()).toString()
                     },2020
                     ,1
                     ,1

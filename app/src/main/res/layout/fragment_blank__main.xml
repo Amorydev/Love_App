@@ -2,19 +2,21 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_main"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="400dp"
     tools:context=".BlankFragment_Main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/txt_heart"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+        <ImageButton
+            android:id="@+id/imb_heart"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
             android:alpha="0.9"
             android:background="@drawable/icon_heart_bc"
@@ -31,12 +33,12 @@
             android:text="1"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
-            android:textSize="80dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_heart"
-            app:layout_constraintEnd_toEndOf="@+id/txt_heart"
+            android:textSize="70dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imb_heart"
+            app:layout_constraintEnd_toEndOf="@+id/imb_heart"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/txt_heart"
-            app:layout_constraintTop_toTopOf="@+id/txt_heart"
+            app:layout_constraintStart_toStartOf="@+id/imb_heart"
+            app:layout_constraintTop_toTopOf="@+id/imb_heart"
             app:layout_constraintVertical_bias="0.307" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
