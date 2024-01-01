@@ -50,6 +50,9 @@ class BlankFragment_Date : Fragment(R.layout.fragment_blank__date) {
         txt_minimus = view.findViewById(R.id.txt_minmus)
         txt_sec = view.findViewById(R.id.txt_sec)
         txt_date_in_heart_year = view.findViewById(R.id.txt_date_in_heart_year)
+        val bundle = arguments?:Bundle()
+        val txt_days = bundle.getString("data")
+        txt_date_in_heart_year.text = txt_days
         return view
     }
     //lấy thời gian hiên tại

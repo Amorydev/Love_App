@@ -8,6 +8,7 @@ import android.icu.util.Calendar
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -18,10 +19,11 @@ import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.example.love_app.databinding.ActivityMainBinding
-import com.example.love_app.databinding.AlertDiaglogSettingBinding
 import com.example.love_app.databinding.FragmentBlankMainBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 import com.scwang.wave.MultiWaveHeader
 import java.text.SimpleDateFormat
@@ -45,30 +47,33 @@ class MainActivity : AppCompatActivity() {
         onCLickMoments()
         onClickTabView()
         onClickSettings()
+
     }
+
+
+
     private fun onClickSettings() {
         binding.imbSetting.setOnClickListener {
-            val build =AlertDialog.Builder(this,R.style.backgroundtrongsuot)
-            val dialogBinding = AlertDiaglogSettingBinding.inflate(LayoutInflater.from(this))
-            build.setView(dialogBinding.root)
-            dialogBinding.btnChangeDate.setOnClickListener{
-                DatePickerDialog(
-                    this,
+            val view:View = layoutInflater.inflate(R.layout.item_bottom_sheet_dialog,null)
+            val dialog = BottomSheetDialog(this)
+            dialog.setContentView(view)
+            dialog.show()
+            var btn_change_date = view.findViewById<Button>(R.id.btn_change_date)
+            btn_change_date.setOnClickListener{
+                DatePickerDialog(this,
                     DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-
-                        val fromDate = LocalDate.of(year, month, dayOfMonth)
-                        var day = ChronoUnit.DAYS.between(fromDate,LocalDate.now()).toString()
-                        val bundle = Bundle().apply {
-                            putString("key", day)
-                        }
-                        val year = ChronoUnit.YEARS.between(fromDate,LocalDate.now()).toString()
-                    },2020
-                    ,1
-                    ,1
+                        val fromdate = LocalDate.of(year,month,dayOfMonth)
+                        val days = ChronoUnit.DAYS.between(fromdate,LocalDate.now()).toString()
+                        val bundle = Bundle()
+                        bundle.putString("key",days)
+                        val fragment = BlankFragment_Main()
+                        fragment.arguments = bundle
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.fragment_main,fragment)
+                            .commit()
+                     },2022,1,1
                 ).show()
             }
-            dialog = build.create()
-            dialog.show()
         }
     }
 

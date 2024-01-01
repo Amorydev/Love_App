@@ -30,7 +30,7 @@ class AddPickerMoments : AppCompatActivity() {
 
     private fun onSave() {
         binding.imbSaveAddMoments.setOnClickListener {
-            var ds: MutableList<OutData> = mutableListOf()
+           /* var ds: MutableList<OutData> = mutableListOf()
             ds.add(
                 OutData(
                     R.drawable.add,
@@ -40,7 +40,7 @@ class AddPickerMoments : AppCompatActivity() {
             )
             Toast.makeText(this, binding.txtTitle.text.toString(), Toast.LENGTH_SHORT).show()
             Toast.makeText(this, binding.txtDate.text.toString(), Toast.LENGTH_SHORT).show()
-
+*/
         }
     }
 
